@@ -3,21 +3,5 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<bean id="oracleDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-		<property name="username" value="kjc" />
-		<property name="password" value="1234" />
-	</bean>
-	
-	<bean id="dataSourceLog" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
-        <constructor-arg ref="oracleDataSource" />
-        <property name="logFormatter">
-            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
-                <property name="loggingType" value="MULTI_LINE" />
-                <property name="sqlPrefix" value="SQL         :  "/>
-            </bean>
-        </property>
-    </bean>
     		
 </beans>
