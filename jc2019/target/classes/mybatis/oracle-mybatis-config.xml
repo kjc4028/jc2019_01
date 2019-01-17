@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration SYSTEM "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings> 
+        <setting name="jdbcTypeForNull" value="NULL"/> 
+        <setting name="cacheEnabled" value="false" /> 
+        <setting name="useGeneratedKeys" value="false" /> 
+        <setting name="mapUnderscoreToCamelCase" value="true"/> 
+        <setting name="defaultExecutorType" value="REUSE" /> 
+        <setting name="databaseType" value="ORACLE"/> 
+        <setting name="defaultPageSize" value="10"/> 
+        <setting name="defaultPageUnit" value="10"/> 
+    </settings>
+    
 	<mappers>
 		<mapper resource="classpath*:/sql/test-sql.xml"/>
 	</mappers>
