@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration SYSTEM "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <settings> 
-        <setting name="jdbcTypeForNull" value="NULL"/> 
-        <setting name="cacheEnabled" value="false" /> 
-        <setting name="useGeneratedKeys" value="false" /> 
-        <setting name="mapUnderscoreToCamelCase" value="true"/> 
-        <setting name="defaultExecutorType" value="REUSE" /> 
-        <setting name="databaseType" value="ORACLE"/> 
-        <setting name="defaultPageSize" value="10"/> 
-        <setting name="defaultPageUnit" value="10"/> 
-    </settings>
+	<!-- 기본정보 셋팅 -->
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="aggressiveLazyLoading" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="defaultStatementTimeout" value="300" />
+		<setting name="localCacheScope" value="SESSION" />
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- select 결과값이 null라도 key생성 --> 
+		<setting name="callSettersOnNulls" value="true"/>
+	</settings>
+    
+    <typeAliases>
+    	<package name="kr.com.jc2019.main.vo.Test01Vo"  />
+    </typeAliases>
     
 	<mappers>
-		<mapper resource="classpath*:/sql/test-sql.xml"/>
+		<mapper resource="common/sql/test-sql.xml"/>
 	</mappers>
 </configuration>
